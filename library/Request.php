@@ -9,10 +9,10 @@ class Request {
     protected $default_controller = 'home'; //Controlador por defecto.
     protected $action; //Acción que ejecuta el usuario.
     protected $default_action = 'index'; // Acción por defecto.
-    protected $params = array(); //Parámatros de la url.
+    protected $params = []; //Parámatros de la url.
 
-    public function __construct($url) {
-        
+    public function __construct($received_url) {
+        var_dump($received_url);
     }
 
 }
