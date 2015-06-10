@@ -57,11 +57,11 @@ class Request {
     }
 
     public function getControllerClassName() {
-        return $this->getController() . 'Controller';
+        return Inflector::camelCase($this->getController()) . 'Controller';
     }
 
     public function getControllerFileName() {
-        return $this->getControllerClassName() . '.php';
+        return 'controller/' . $this->getControllerClassName() . '.php';
     }
 
     public function getActionMethodName() {
