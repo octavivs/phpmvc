@@ -13,10 +13,10 @@ class Request {
 
     public function __construct($received_url) {
         $this->url = $received_url;
-        var_dump($this->url);
         $segments = explode('/', $this->getUrl());
-        var_dump("<br>El contenido del segmento es:<br>");
-        var_dump($segments);
+        $this->resolveController($segments);
+        $this->resolveAction($segments);
+        $this->resolveParams($segments);
     }
 
     public function getUrl() {
@@ -39,6 +39,18 @@ class Request {
 
     public function resolveParams(&$segments) {
         $this->params = $segments;
+    }
+
+    public function getController() {
+        return $this->controller;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    public function getParams() {
+        return $this->params;
     }
 
 }
