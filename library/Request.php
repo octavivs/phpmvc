@@ -17,6 +17,9 @@ class Request {
         $this->resolveController($segments);
         $this->resolveAction($segments);
         $this->resolveParams($segments);
+        var_dump($this->getControllerClassName());
+        var_dump($this->getControllerFileName());
+        var_dump($this->getActionMethodName());
     }
 
     public function getUrl() {
@@ -51,6 +54,18 @@ class Request {
 
     public function getParams() {
         return $this->params;
+    }
+
+    public function getControllerClassName() {
+        return $this->getController() . 'Controller';
+    }
+
+    public function getControllerFileName() {
+        return $this->getControllerClassName() . '.php';
+    }
+
+    public function getActionMethodName() {
+        return $this->getAction() . 'Action';
     }
 
 }
