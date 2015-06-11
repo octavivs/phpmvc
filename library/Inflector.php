@@ -4,7 +4,7 @@ namespace phpmvc\library;
 
 class Inflector {
 
-    public static function camelCase($value) {
+    public static function pascalCase($value) {
         $segments = explode('-', $value);
         array_walk($segments, function (&$item) {
             $item = ucfirst(strtolower($item));

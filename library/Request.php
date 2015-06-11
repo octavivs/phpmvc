@@ -57,7 +57,7 @@ class Request {
     }
 
     public function getControllerClassName() {
-        return Inflector::camelCase($this->getController()) . 'Controller';
+        return Inflector::pascalCase($this->getController()) . 'Controller';
     }
 
     public function getControllerFileName() {
